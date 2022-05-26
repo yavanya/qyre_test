@@ -7,7 +7,7 @@ class KTextStyles {
   static const appBar = TextStyle(
     fontFamily: _family,
     fontSize: 18,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.w600,
     color: KColors.grey,
   );
 

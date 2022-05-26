@@ -13,6 +13,8 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
+  visibility_detector: ^0.3.3
+  flutter_svg: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -44,10 +46,10 @@ flutter:
   fonts:
     - family: Matter
       fonts:
-        - asset: assets/fonts/Matter-Bold.otf
-        - asset: assets/fonts/matter-light.otf
-        - asset: assets/fonts/matter-medium.otf
-        - asset: assets/fonts/Matter-Regular.eot
-        - asset: assets/fonts/Matter-SemiBold.eot
+        - asset: assets/fonts/Matter/Matter-Bold.otf
+        - asset: assets/fonts/Matter/matter-light.otf
+        - asset: assets/fonts/Matter/matter-medium.otf
+        - asset: assets/fonts/Matter/Matter-Regular.eot
+        - asset: assets/fonts/Matter/Matter-SemiBold.eot
 
 
