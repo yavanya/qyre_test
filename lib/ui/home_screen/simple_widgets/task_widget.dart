@@ -85,7 +85,7 @@ class _TaskWidget extends StatelessWidget {
                           style: KTextStyles.subTitle14,
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 4, right: 8),
+                          padding: const EdgeInsets.symmetric(horizontal: 8),
                           child: SvgPicture.asset(
                               'assets/images/chevron_right.svg'),
                         ),

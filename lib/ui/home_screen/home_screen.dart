@@ -16,6 +16,7 @@ part 'simple_widgets/day_reduced_widget.dart';
 part 'simple_widgets/nav_bar.dart';
 part 'simple_widgets/days_widget.dart';
 part 'simple_widgets/task_widget.dart';
+part 'simple_widgets/production_widget.dart';
 
 part 'slivers/app_bar.dart';
 
@@ -66,9 +67,10 @@ class _HomeScreenState extends State<HomeScreen> {
           body: CustomScrollView(
             slivers: [
               SliverToBoxAdapter(
-                  child: SizedBox(
-                height: appbarHeight + 12,
-              )),
+                child: SizedBox(
+                  height: appbarHeight + 12,
+                ),
+              ),
               SliverToBoxAdapter(
                 child: _DaysWidget(
                   showBottom: showBottom,
@@ -101,6 +103,30 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ],
                   ),
+                ),
+              ),
+              const SliverList(
+                delegate: SliverChildListDelegate.fixed(
+                  [
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: 16, right: 16, top: 16, bottom: 8),
+                      child: _ProductionWidget(
+                        imagePath: 'assets/images/image1.png',
+                        title: 'Production Name That Is Long',
+                        date: 'Sweden Jan 14, 2022 - Feb 23, 2023',
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 16, right: 16, bottom: 8),
+                      child: _ProductionWidget(
+                        imagePath: 'assets/images/image2.png',
+                        title:
+                            'Production Name That Is Long Long Long Long Long Long Long',
+                        date: 'Sweden Jan 14, 2022 - Feb 23, 2023',
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
