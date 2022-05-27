@@ -21,62 +21,63 @@ class _TaskWidget extends StatelessWidget {
     return SizedBox(
       width: 300,
       height: 136,
-      child: Container(
+      child: Ink(
         decoration: BoxDecoration(
           color: KColors.lightGrey,
           borderRadius: BorderRadius.circular(4),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Flexible(
-              flex: chart != null ? 5 : 6,
-              fit: FlexFit.tight,
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Text(
-                  title,
-                  style: KTextStyles.title16,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(4),
+          onTap: () {},
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Flexible(
+                flex: chart != null ? 5 : 6,
+                fit: FlexFit.tight,
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Text(
+                    title,
+                    style: KTextStyles.title16,
+                  ),
                 ),
               ),
-            ),
-            if (chart != null)
+              if (chart != null)
+                Flexible(
+                    flex: 2,
+                    fit: FlexFit.tight,
+                    child: Stack(
+                      children: [
+                        SizedBox(
+                          width: 268,
+                          height: 9,
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              color: KColors.white,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 268 * chart!,
+                          height: 9,
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              color: KColors.lightBlue,
+                            ),
+                          ),
+                        ),
+                      ],
+                    )),
               Flexible(
-                  flex: 2,
-                  fit: FlexFit.tight,
-                  child: Stack(
-                    children: [
-                      SizedBox(
-                        width: 268,
-                        height: 9,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            color: KColors.white,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 268 * chart!,
-                        height: 9,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            color: KColors.lightBlue,
-                          ),
-                        ),
-                      ),
-                    ],
-                  )),
-            Flexible(
-              flex: 3,
-              fit: FlexFit.tight,
-              child: Row(
-                children: [
-                  const Expanded(
-                    child: SizedBox(),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Row(
+                flex: 3,
+                fit: FlexFit.tight,
+                child: Row(
+                  children: [
+                    const Expanded(
+                      child: SizedBox(),
+                    ),
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -85,17 +86,17 @@ class _TaskWidget extends StatelessWidget {
                           style: KTextStyles.subTitle14,
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8),
+                          padding: const EdgeInsets.only(left: 8, right: 16),
                           child: SvgPicture.asset(
                               'assets/images/chevron_right.svg'),
                         ),
                       ],
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

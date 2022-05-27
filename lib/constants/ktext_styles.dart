@@ -21,6 +21,13 @@ class KTextStyles {
   static const title14 = TextStyle(
     fontFamily: _family,
     fontSize: 14,
+    fontWeight: FontWeight.bold,
+    color: KColors.black,
+  );
+
+  static const subTitle18 = TextStyle(
+    fontFamily: _family,
+    fontSize: 18,
     fontWeight: FontWeight.w500,
     color: KColors.black,
   );
@@ -28,7 +35,7 @@ class KTextStyles {
   static const subTitle14 = TextStyle(
     fontFamily: _family,
     fontSize: 14,
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeight.w500,
     color: KColors.black,
   );
 
