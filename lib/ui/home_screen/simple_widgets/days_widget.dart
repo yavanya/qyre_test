@@ -7,6 +7,7 @@ class _DaysWidget extends StatelessWidget {
     required this.rand,
     Key? key,
   }) : super(key: key);
+
   final VoidCallback showBottom;
   final VoidCallback hideBottom;
   final bool rand;
@@ -31,8 +32,8 @@ class _DaysWidget extends StatelessWidget {
             return Padding(
               padding: EdgeInsets.only(
                 bottom: 4,
-                left: index == 0 ? 8 : 4,
-                right: index == 6 ? 8 : 0,
+                left: index == 0 ? 16 : 8,
+                right: index == 6 ? 16 : 0,
               ),
               child: _DayWidget(
                 day: '${index + 1}',

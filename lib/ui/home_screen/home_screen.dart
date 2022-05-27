@@ -15,6 +15,7 @@ part 'simple_widgets/day_widget.dart';
 part 'simple_widgets/day_reduced_widget.dart';
 part 'simple_widgets/nav_bar.dart';
 part 'simple_widgets/days_widget.dart';
+part 'simple_widgets/task_widget.dart';
 
 part 'slivers/app_bar.dart';
 
@@ -60,6 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Stack(
       children: [
         Scaffold(
+          backgroundColor: KColors.white,
           bottomNavigationBar: const _HomeNavBar(),
           body: CustomScrollView(
             slivers: [
@@ -72,6 +74,33 @@ class _HomeScreenState extends State<HomeScreen> {
                   showBottom: showBottom,
                   hideBottom: hideBottom,
                   rand: rand,
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 136,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 16),
+                        child: _TaskWidget(
+                          title:
+                              'Complete yout profile to optimize your exposure in job searches',
+                          buttonText: 'Complete profile',
+                          chart: 0.75,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8, right: 16),
+                        child: _TaskWidget(
+                          title:
+                              'Connect with people you might know and extend your network',
+                          buttonText: 'Connect',
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],

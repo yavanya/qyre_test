@@ -40,8 +40,8 @@ class _HomeAppBar extends StatelessWidget {
                   return Padding(
                     padding: EdgeInsets.only(
                       bottom: 4,
-                      left: index == 0 ? 8 : 4,
-                      right: index == 6 ? 8 : 0,
+                      left: index == 0 ? 16 : 8,
+                      right: index == 6 ? 16 : 0,
                     ),
                     child: _DayReducedWidget(
                       day: '${index + 1}',
