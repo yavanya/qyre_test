@@ -1,4 +1,4 @@
-part of home_screen;
+part of availability_page;
 
 class _TaskWidget extends StatelessWidget {
   _TaskWidget({
@@ -27,6 +27,7 @@ class _TaskWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(4),
         ),
         child: InkWell(
+          splashFactory: Platform.isAndroid ? null : NoSplash.splashFactory,
           borderRadius: BorderRadius.circular(4),
           onTap: () {},
           child: Column(
@@ -86,7 +87,10 @@ class _TaskWidget extends StatelessWidget {
                           style: KTextStyles.subTitle14,
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 8, right: 16),
+                          padding: const EdgeInsets.only(
+                            left: 8,
+                            right: 16,
+                          ),
                           child: SvgPicture.asset(
                               'assets/images/chevron_right.svg'),
                         ),

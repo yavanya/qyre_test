@@ -1,4 +1,4 @@
-part of home_screen;
+part of availability_page;
 
 class _ProductionWidget extends StatelessWidget {
   const _ProductionWidget({
@@ -22,16 +22,20 @@ class _ProductionWidget extends StatelessWidget {
           color: KColors.lightGrey,
         ),
         child: InkWell(
+          splashFactory: Platform.isAndroid ? null : NoSplash.splashFactory,
           borderRadius: BorderRadius.circular(4),
           onTap: () {},
           child: Row(
             children: [
               ClipRRect(
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(4),
-                    bottomLeft: Radius.circular(4),
-                  ),
-                  child: Image.asset(imagePath)),
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(4),
+                  bottomLeft: Radius.circular(4),
+                ),
+                child: Image.asset(
+                  imagePath,
+                ),
+              ),
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.only(left: 16),

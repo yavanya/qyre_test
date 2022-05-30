@@ -1,4 +1,4 @@
-part of home_screen;
+part of availability_page;
 
 class _DaysWidget extends StatelessWidget {
   const _DaysWidget({
@@ -28,6 +28,7 @@ class _DaysWidget extends StatelessWidget {
         child: ListView.builder(
           itemCount: 7,
           scrollDirection: Axis.horizontal,
+          physics: const BouncingScrollPhysics(),
           itemBuilder: (context, index) {
             return Padding(
               padding: EdgeInsets.only(

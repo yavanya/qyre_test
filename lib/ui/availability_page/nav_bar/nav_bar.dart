@@ -1,4 +1,4 @@
-part of home_screen;
+part of availability_page;
 
 class _HomeNavBar extends StatelessWidget {
   const _HomeNavBar({Key? key}) : super(key: key);
@@ -9,14 +9,17 @@ class _HomeNavBar extends StatelessWidget {
       backgroundColor: KColors.black,
       destinations: [
         IconButton(
+          splashColor: Platform.isAndroid ? null : Colors.transparent,
           icon: SvgPicture.asset('assets/images/home.svg'),
           onPressed: () {},
         ),
         IconButton(
+          splashColor: Platform.isAndroid ? null : Colors.transparent,
           icon: SvgPicture.asset('assets/images/menu.svg'),
           onPressed: () {},
         ),
         IconButton(
+          splashColor: Platform.isAndroid ? null : Colors.transparent,
           icon: Stack(
             alignment: Alignment.center,
             children: [

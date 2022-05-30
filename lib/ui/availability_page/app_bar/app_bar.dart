@@ -1,4 +1,4 @@
-part of home_screen;
+part of availability_page;
 
 class _HomeAppBar extends StatelessWidget {
   const _HomeAppBar({required this.showBottom, Key? key}) : super(key: key);
@@ -16,7 +16,10 @@ class _HomeAppBar extends StatelessWidget {
       backgroundColor: KColors.white.withOpacity(0.8),
       flexibleSpace: ClipRect(
         child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 12, sigmaY: 7),
+          filter: ImageFilter.blur(
+            sigmaX: 7,
+            sigmaY: 7,
+          ),
           child: Container(
             color: Colors.transparent,
           ),
@@ -27,10 +30,10 @@ class _HomeAppBar extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(bottom: 8),
           child: AnimatedCrossFade(
-            duration: const Duration(milliseconds: 100),
+            duration: const Duration(milliseconds: 150),
             reverseDuration: const Duration(milliseconds: 100),
-            firstCurve: Curves.bounceIn,
-            secondCurve: Curves.bounceIn,
+            firstCurve: Curves.easeInCubic,
+            secondCurve: Curves.easeOutCubic,
             firstChild: SizedBox(
               height: 42,
               child: ListView.builder(

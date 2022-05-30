@@ -1,7 +1,7 @@
-part of home_screen;
+part of availability_page;
 
-class _DayReducedWidget extends StatelessWidget {
-  const _DayReducedWidget({
+class _DayWidget extends StatelessWidget {
+  const _DayWidget({
     required this.weekDay,
     required this.month,
     required this.day,
@@ -18,18 +18,23 @@ class _DayReducedWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: KColors.black,
-        borderRadius: BorderRadius.circular(4),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 5),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Row(
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        Container(
+          constraints: const BoxConstraints(minWidth: 60),
+          decoration: BoxDecoration(
+            color: KColors.black,
+            borderRadius: BorderRadius.circular(4),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 10,
+              vertical: 15,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 if (isToday)
                   Text(
@@ -38,20 +43,27 @@ class _DayReducedWidget extends StatelessWidget {
                       color: KColors.lightGrey,
                     ),
                   ),
-                const SizedBox(width: 2),
                 Text(
                   weekDay,
+                  style: KTextStyles.subTitle12.copyWith(
+                    color: KColors.white,
+                  ),
+                ),
+                Text(
+                  month,
                   style: KTextStyles.paragraph.copyWith(
                     color: KColors.white,
                   ),
                 ),
-              ],
-            ),
-            Row(
-              children: [
+                Text(
+                  day,
+                  style: KTextStyles.title16.copyWith(
+                    color: KColors.white,
+                  ),
+                ),
                 if (hasApp != null)
                   Padding(
-                    padding: const EdgeInsets.only(right: 2),
+                    padding: const EdgeInsets.only(top: 8.0),
                     child: Container(
                       height: 8,
                       width: 8,
@@ -61,24 +73,11 @@ class _DayReducedWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                Text(
-                  day,
-                  style: KTextStyles.paragraph.copyWith(
-                    color: KColors.white,
-                  ),
-                ),
-                const SizedBox(width: 2),
-                Text(
-                  '$month.',
-                  style: KTextStyles.paragraph.copyWith(
-                    color: KColors.white,
-                  ),
-                ),
               ],
             ),
-          ],
+          ),
         ),
-      ),
+      ],
     );
   }
 }
